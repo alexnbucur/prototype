@@ -5,3 +5,46 @@
 		$request.createBookingLineOfType("IPT");
 		$request.calculateAmount(9.0);
 end
+
+
+----- REQUEST HAS BEEN INSERTED TO THE KIE SESSION ----- 
+
+BookingLineGenerator [Cargo, Fire, DE, Tue Feb 19 14:23:35 CET 2019, 500]
+
+----- RULES ARE BEING FIRED ----- 
+
+***** BookingLine of type IPT with 13.2% is being added to the Booking ***** 
+
+***** BookingLine of type Para Fiscal with amount 8.8 is being added to the Booking ***** 
+
+----- KIE SESSION IS BEING CLOSED ----- 
+
+----- RESULT -----
+
+Booking [500, [BookingLine [65.00, IPT], BookingLine [8.80, Para_Fiscal]]]
+----- REQUEST HAS BEEN INSERTED TO THE KIE SESSION ----- 
+
+BookingLineGenerator [Cargo, Transport-Domestic, FR, Tue Feb 19 14:23:36 CET 2019, 4000]
+
+----- RULES ARE BEING FIRED ----- 
+
+***** BookingLine of type Para Fiscal with amount 5.0 is being added to the Booking ***** 
+
+----- KIE SESSION IS BEING CLOSED ----- 
+
+----- RESULT -----
+
+Booking [4000, [BookingLine [5.00, Para_Fiscal]]]
+----- REQUEST HAS BEEN INSERTED TO THE KIE SESSION ----- 
+
+BookingLineGenerator [Cargo, Storage, BE, Tue Feb 19 14:23:36 CET 2019, 2000]
+
+----- RULES ARE BEING FIRED ----- 
+
+***** BookingLine of type IPT with 9.0% is being added to the Booking ***** 
+
+----- KIE SESSION IS BEING CLOSED ----- 
+
+----- RESULT -----
+
+Booking [2000, [BookingLine [180.00, IPT]]]
