@@ -1,0 +1,7 @@
+﻿rule "Taxes_9"
+	when
+		$request:BookingLineGenerator($request.getTaxCountry() == "BE", $request.getInsuranceType() == "Cargo", $request.getInsuranceSubType() =="Storage" || "Storage" == "*")
+	then
+		$request.createBookingLineOfType("IPT");
+		$request.calculateAmount(9.0);
+end
