@@ -1,9 +1,9 @@
-﻿rule "Taxes_9"
+rule "BE-1"
 	when
-		$request:BookingLineGenerator($request.getTaxCountry() == "BE", $request.getInsuranceType() == "Cargo", $request.getInsuranceSubType() =="Storage" || "Storage" == "*")
+		$request:BookingLineGenerator($request.getTaxCountry() == "BE", $request.getInsuranceType() == "Cargo", $request.getInsuranceSubType() =="Storage" || "Storage" == "*", $request.getBookingDate().compareTo("2000-01-01") >= 0, $request.getBookingDate().compareTo("2050-01-01") < 0)
 	then
 		$request.createBookingLineOfType("IPT");
-		$request.calculateAmount(9.0);
+		$request.calculateAmount(9.25);
 end
 
 
