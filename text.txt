@@ -7,44 +7,104 @@
 end
 
 
------ REQUEST HAS BEEN INSERTED TO THE KIE SESSION ----- 
+----- START PROCESS ----- 
 
-BookingLineGenerator [Cargo, Fire, DE, Tue Feb 19 14:23:35 CET 2019, 500]
+BookingLineGenerator [Cargo, Fire, SE, 2019-02-20, 500]
 
 ----- RULES ARE BEING FIRED ----- 
 
-***** BookingLine of type IPT with 13.2% is being added to the Booking ***** 
-
-***** BookingLine of type Para Fiscal with amount 8.8 is being added to the Booking ***** 
+Rule SE-1 has been applied
+BookingLine of type IPT is being skipped because the value is 0
+Booking [ premiumAmount:500, []]
 
 ----- KIE SESSION IS BEING CLOSED ----- 
 
 ----- RESULT -----
 
-Booking [500, [BookingLine [65.00, IPT], BookingLine [8.80, Para_Fiscal]]]
------ REQUEST HAS BEEN INSERTED TO THE KIE SESSION ----- 
+Booking [ premiumAmount:500, []]
 
-BookingLineGenerator [Cargo, Transport-Domestic, FR, Tue Feb 19 14:23:36 CET 2019, 4000]
+***********************************************************************
+
+----- START PROCESS ----- 
+
+BookingLineGenerator [Cargo, Fire, DE, 2019-02-20, 500]
 
 ----- RULES ARE BEING FIRED ----- 
 
-***** BookingLine of type Para Fiscal with amount 5.0 is being added to the Booking ***** 
+Rule DE-4 has been applied
+BookingLine of type IPT with 13.2% is being added to the Booking 
+Booking [ premiumAmount:500, [BookingLine [amount:65.00, IPT]]]
+
+Rule DE-5 has been applied
+BookingLine of type Para Fiscal with 8.8% is being added to the Booking
+Booking [ premiumAmount:500, [BookingLine [amount:65.00, IPT], BookingLine [amount:45.00, PFP, ParaFiscal - Fire brigade tax]]]
 
 ----- KIE SESSION IS BEING CLOSED ----- 
 
 ----- RESULT -----
 
-Booking [4000, [BookingLine [5.00, Para_Fiscal]]]
------ REQUEST HAS BEEN INSERTED TO THE KIE SESSION ----- 
+Booking [ premiumAmount:500, [BookingLine [amount:65.00, IPT], BookingLine [amount:45.00, PFP, ParaFiscal - Fire brigade tax]]]
 
-BookingLineGenerator [Cargo, Storage, BE, Tue Feb 19 14:23:36 CET 2019, 2000]
+***********************************************************************
+
+----- START PROCESS ----- 
+
+BookingLineGenerator [Cargo, Transport-Domestic, FR, 2019-02-20, 4000]
 
 ----- RULES ARE BEING FIRED ----- 
 
-***** BookingLine of type IPT with 9.0% is being added to the Booking ***** 
+Rule FR-2 has been applied
+BookingLine of type IPT is being skipped because the value is 0
+Booking [ premiumAmount:4000, []]
+
+Rule FR-5 has been applied
+BookingLine of type Para Fiscal with 12.0% is being added to the Booking
+Booking [ premiumAmount:4000, [BookingLine [amount:480.00, PFP, ParaFiscal - Major risk prevention fund]]]
+
+Rule FR-6 has been applied
+BookingLine of type ParaFiscal with amount 5.0 is being added to the Booking
+Booking [ premiumAmount:4000, [BookingLine [amount:480.00, PFP, ParaFiscal - Major risk prevention fund], BookingLine [amount:5.00, PFF, ParaFiscal - Common funds for victems of terrorism]]]
 
 ----- KIE SESSION IS BEING CLOSED ----- 
 
 ----- RESULT -----
 
-Booking [2000, [BookingLine [180.00, IPT]]]
+Booking [ premiumAmount:4000, [BookingLine [amount:480.00, PFP, ParaFiscal - Major risk prevention fund], BookingLine [amount:5.00, PFF, ParaFiscal - Common funds for victems of terrorism]]]
+
+***********************************************************************
+
+----- START PROCESS ----- 
+
+BookingLineGenerator [Cargo, Storage, SE, 2023-06-10, 500]
+
+----- RULES ARE BEING FIRED ----- 
+
+Rule SE-2 has been applied
+BookingLine of type IPT with 5.0% is being added to the Booking 
+Booking [ premiumAmount:500, [BookingLine [amount:25.00, IPT]]]
+
+----- KIE SESSION IS BEING CLOSED ----- 
+
+----- RESULT -----
+
+Booking [ premiumAmount:500, [BookingLine [amount:25.00, IPT]]]
+
+***********************************************************************
+
+----- START PROCESS ----- 
+
+BookingLineGenerator [Cargo, Storage, BE, 2019-02-20, 2000]
+
+----- RULES ARE BEING FIRED ----- 
+
+Rule BE-1 has been applied
+BookingLine of type IPT with 9.25% is being added to the Booking 
+Booking [ premiumAmount:2000, [BookingLine [amount:180.00, IPT]]]
+
+----- KIE SESSION IS BEING CLOSED ----- 
+
+----- RESULT -----
+
+Booking [ premiumAmount:2000, [BookingLine [amount:180.00, IPT]]]
+
+***********************************************************************
